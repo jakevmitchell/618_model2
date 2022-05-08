@@ -8,7 +8,7 @@ import logging
 import pynvml
 import os
 
-os.chdir(r"C:\Users\Charg\OneDrive\Documents\618_proj\DL-LA-main\DL-LA-main")
+os.chdir("/home/jmitch6/618_model2")
 pynvml.nvmlInit()
 handle = pynvml.nvmlDeviceGetHandleByIndex(0)
 # Specify the raw data set to be analyzed (e.g.)
@@ -35,7 +35,7 @@ balance = 1
 
 train_x, train_y, val_x, val_y = traceconfig.prep_traces(traceset, nrtrain, nrval, balance)
 
-model = tf.keras.models.load_model("converted_model.tflite")
+model = tf.keras.models.load_model("CNNModel")
 model.summary()
 model.compile(optimizer="Adam",loss="mse")
 print(model.evaluate(val_x,val_y))
