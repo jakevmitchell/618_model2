@@ -1,4 +1,5 @@
 import tensorflow as tf
+print(tf.__version__)
 from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Reshape, Conv1D, MaxPooling1D, Flatten, Dense
 from tensorflow.python.keras.activations import relu
@@ -8,7 +9,7 @@ import logging
 import pynvml
 import os
 
-os.chdir("/home/jmitch6/618_model2")
+os.chdir("/home/pi/618_model2")
 pynvml.nvmlInit()
 handle = pynvml.nvmlDeviceGetHandleByIndex(0)
 # Specify the raw data set to be analyzed (e.g.)
